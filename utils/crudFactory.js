@@ -1,4 +1,5 @@
-// Generic CRUD factory to avoid repetition
+
+
 export const crudControllers = (Model) => ({
   createOne: async (req, res, next) => {
     try {
@@ -30,8 +31,10 @@ export const crudControllers = (Model) => ({
 
   updateOne: async (req, res, next) => {
     try {
-      const doc = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true });
-      if (!doc) return res.status(404).json({ message: "Not found" });
+      const doc = await Model.findByIdAndUpdate(req.params.id, req.body, { new: 
+        true });
+      if (!doc) return res.status(404).json
+        ({ message: "Not found" });
       res.json(doc);
     } catch (err) {
       next(err);
@@ -41,7 +44,9 @@ export const crudControllers = (Model) => ({
   deleteOne: async (req, res, next) => {
     try {
       const doc = await Model.findByIdAndDelete(req.params.id);
-      if (!doc) return res.status(404).json({ message: "Not found" });
+      if (!doc) return res.status(404).json({ message: 
+        "Not found" 
+                                            });
       res.json({ message: "Deleted successfully" });
     } catch (err) {
       next(err);
