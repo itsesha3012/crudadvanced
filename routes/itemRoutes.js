@@ -1,6 +1,6 @@
 import express from "express";
 import itemController from "../controllers/itemController.js";
-// import { protect } from "../middlewares/authMiddleware.js";
+
 
 const router = express.Router();
 
